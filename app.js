@@ -2,7 +2,7 @@ const express = require( 'express' );
 const app = express();
 const morgan = require('morgan');
 
-app.use(morgan('dev'));
+app.use(morgannodemon);
 
 app.get('/', function (req, res) {
   res.send('hello');

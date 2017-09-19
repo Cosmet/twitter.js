@@ -2,17 +2,19 @@ const express = require( 'express' );
 const app = express();
 const morgan = require('morgan');
 const nunjucks = require('nunjucks')
+const routes = require('./routes');
+app.use('/', routes);
 
 app.use(morgan('dev'));
 
-app.get('/', function (req, res) {
-  res.send('hello');
-})
+// app.get('/stylesheets/style.css', function(req, res) {
+//   res.sendFile('twitter.js/public/stylesheets/style.css', function(err) {
+//     if (err) throw err;
+//     console.log('file sent');
+//   });
+// })
 
-app.get('/views', function (req, res) {
-  const people = [{name: 'breanna'}, {name: 'christian'}, {name: 'ben'}];
-  res.render( 'index', {title: 'fullstackers', people: people} );
-})
+app.use(express.static('public'))
 
 app.listen('3000', function (req, res) {
   console.log('server running');

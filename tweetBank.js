@@ -1,9 +1,11 @@
 const _ = require('lodash');
 
 let data = [];
+let id = 100
 
 function add (name, content) {
-  data.push({ name: name, content: content });
+  data.push({ name: name, content: content , id: id.toString()});
+  id++;
 }
 
 function list () {
@@ -11,6 +13,7 @@ function list () {
 }
 
 function find (properties) {
+  console.log(data);
   return _.cloneDeep(_.filter(data, properties));
 }
 

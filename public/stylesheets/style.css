@@ -57,3 +57,16 @@ code {
 .content .by {
   font-weight: bold;
 }
+/*
+li {
+  list-style-image: url('https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg');
+  text-indent: -50px;
+} */
+
+.tweetimg {
+  float: left;
+}
+
+.text {
+  padding-left: 5%;
+}

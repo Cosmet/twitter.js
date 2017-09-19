@@ -3,12 +3,15 @@ const app = express();
 const morgan = require('morgan');
 const nunjucks = require('nunjucks')
 const routes = require('./routes');
-app.use('/', routes);
+const bodyParser = require('body-parser');
 
+app.use('/', routes);
 app.use(morgan('dev'));
 
+
+
 // app.get('/stylesheets/style.css', function(req, res) {
-//   res.sendFile('twitter.js/public/stylesheets/style.css', function(err) {
+//   res.sendFile(__dirname + '/public/stylesheets/style.css', function(err) {
 //     if (err) throw err;
 //     console.log('file sent');
 //   });
